@@ -27,8 +27,8 @@ class TeacherSubject < ApplicationRecord
   belongs_to :subject
 
   validates :teacher, uniqueness: {scope: :subject}, if: :_not_marked_for_destruction?
-
   validates :level, presence: true
+
   before_validation :_default_values_on_create, on: :create
 
   def _default_values_on_create
